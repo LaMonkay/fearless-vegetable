@@ -4,7 +4,7 @@
     "beforeBuildCommand": "pnpm build",
     "devPath": "http://localhost:1420",
     "distDir": "../dist",
-    "withGlobalTauri": false
+    "withGlobalTauri": true
   },
   "package": {
     "productName": "fearless-vegetable",
@@ -57,10 +57,10 @@
     "updater": {
       "active": true,
       "endpoints": [
-        "https://gist.githubusercontent.com/LaMonkay/38a6f6e2c5378dfb3f5d56679db40a7d/raw/c453248fc97442eee10628e1735ab4651b3406fb/tauri-testing-updater"
+        "https://gist.githubusercontent.com/LaMonkay/38a6f6e2c5378dfb3f5d56679db40a7d/raw/64ed7a5379977bd7843d0db4da083579a021372a/tauri-testing-updater.json"
       ],
       "dialog": true,
-      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDdBMDA4RUNFNUI2OUNCOTkKUldTWnkybGJ6bzRBZW9FT09xTS85dFRNbVhOdTJncmxpblppWjgrd0JFNU1rUmdKL213VXY5MVoK"
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDExRERBQTk0RERGMTNCOApSV1M0RTk5TnFkb2RBYzZTaVdDSHBHYnd5WUh2M2RFUWRKYUl0cGZhbGhoOEtNYXVWQ0VCalRLSAo="
     },
     "windows": [
       {
