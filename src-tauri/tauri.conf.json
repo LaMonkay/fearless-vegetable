@@ -33,7 +33,7 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.tauri.dev",
+      "identifier": "com.fearless-vegetable",
       "longDescription": "",
       "macOS": {
         "entitlements": null,
@@ -55,7 +55,12 @@
       "csp": null
     },
     "updater": {
-      "active": false
+      "active": true,
+      "endpoints": [
+        "https://gist.githubusercontent.com/LaMonkay/38a6f6e2c5378dfb3f5d56679db40a7d/raw/c453248fc97442eee10628e1735ab4651b3406fb/tauri-testing-updater"
+      ],
+      "dialog": true,
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDdBMDA4RUNFNUI2OUNCOTkKUldTWnkybGJ6bzRBZW9FT09xTS85dFRNbVhOdTJncmxpblppWjgrd0JFNU1rUmdKL213VXY5MVoK"
     },
     "windows": [
       {
