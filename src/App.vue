@@ -2,6 +2,56 @@
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import Greet from "./components/Greet.vue";
+import { ref } from 'vue'
+import { checkUpdate, installUpdate } from '@tauri-apps/api/updater'
+import { relaunch } from '@tauri-apps/api/process'
+import { writeTextFile, BaseDirectory, readTextFile } from '@tauri-apps/api/fs';
+import { merge } from 'lodash';
+
+async function update() {
+  try {
+    const { shouldUpdate, manifest } = await checkUpdate()
+    if (shouldUpdate) {
+      // display dialog
+      await installUpdate()
+      // install complete, restart the app
+
+      await myWriteTextFile({'recent_update': {'just_updated': true}})
+
+      await relaunch()
+    }
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+update()
+
+const newUpdate = ref('')
+
+const myReadTextFile = async () => {
+  const contents = await readTextFile('storage.json', { dir: BaseDirectory.AppConfig });
+  const parsedContents = JSON.parse(contents);
+  return parsedContents;
+}
+
+const myWriteTextFile =  async (paramPath: object) => {
+  const contents = await myReadTextFile()
+  const newStorage = merge(contents, paramPath)
+
+  writeTextFile('storage.json', JSON.stringify(newStorage), { dir: BaseDirectory.AppConfig })
+}
+
+async function updateMessage() {
+  const contents = await myReadTextFile()
+  
+  if (contents.recent_update.just_updated == true) {
+    newUpdate.value = contents.recent_update.update_message
+    myWriteTextFile({'recent_update': {'just_updated': false}})
+  }
+}
+
+updateMessage()
 </script>
 
 <template>
@@ -19,6 +69,8 @@ import Greet from "./components/Greet.vue";
         <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
       </a>
     </div>
+
+    {{ newUpdate }}
 
     <p>Click on the Tauri, Vite, and Vue logos to learn more.</p>
 

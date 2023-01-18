@@ -12,10 +12,13 @@
   },
   "tauri": {
     "allowlist": {
-      "all": false,
+      "all": true,
       "shell": {
-        "all": false,
+        "all": true,
         "open": true
+      },
+      "fs": {
+        "scope": ["$APPCONFIG/*"]
       }
     },
     "bundle": {
@@ -59,7 +62,7 @@
       "endpoints": [
         "https://gist.githubusercontent.com/LaMonkay/38a6f6e2c5378dfb3f5d56679db40a7d/raw/64ed7a5379977bd7843d0db4da083579a021372a/tauri-testing-updater.json"
       ],
-      "dialog": true,
+      "dialog": false,
       "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDExRERBQTk0RERGMTNCOApSV1M0RTk5TnFkb2RBYzZTaVdDSHBHYnd5WUh2M2RFUWRKYUl0cGZhbGhoOEtNYXVWQ0VCalRLSAo="
     },
     "windows": [

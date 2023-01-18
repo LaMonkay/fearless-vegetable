@@ -3,8 +3,10 @@ lockfileVersion: 5.4
 specifiers:
   '@tauri-apps/api': ^1.2.0
   '@tauri-apps/cli': ^1.2.2
+  '@types/lodash': ^4.14.191
   '@types/node': ^18.7.10
   '@vitejs/plugin-vue': ^4.0.0
+  lodash: ^4.17.21
   typescript: ^4.6.4
   vite: ^4.0.0
   vue: ^3.2.45
@@ -12,10 +14,12 @@ specifiers:
 
 dependencies:
   '@tauri-apps/api': 1.2.0
+  lodash: 4.17.21
   vue: 3.2.45
 
 devDependencies:
   '@tauri-apps/cli': 1.2.2
+  '@types/lodash': 4.14.191
   '@types/node': 18.11.18
   '@vitejs/plugin-vue': 4.0.0_vite@4.0.4+vue@3.2.45
   typescript: 4.9.4
@@ -347,6 +351,10 @@ packages:
       '@tauri-apps/cli-win32-x64-msvc': 1.2.2
     dev: true
 
+  /@types/lodash/4.14.191:
+    resolution: {integrity: sha512-BdZ5BCCvho3EIXw6wUCXHe7rS53AIDPLE+JzwgT+OsJk53oBfbSmZZ7CX4VaRoN78N+TJpFi9QPlfIVNmJYWxQ==}
+    dev: true
+
   /@types/node/18.11.18:
     resolution: {integrity: sha512-DHQpWGjyQKSHj3ebjFI/wRKcqQcdR+MoFBygntYOZytCqNfkd2ZC4ARDJ2DQqhjH5p85Nnd3jhUJIXrszFX/JA==}
     dev: true
@@ -553,6 +561,10 @@ packages:
     dependencies:
       has: 1.0.3
     dev: true
+
+  /lodash/4.17.21:
+    resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
+    dev: false
 
   /magic-string/0.25.9:
     resolution: {integrity: sha512-RmF0AsMzgt25qzqqLc1+MbHmhdx0ojF2Fvs4XnOqz2ZOBXzzkEwc/dJQZCYHAn7v1jbVOjAZfK8msRn4BxO4VQ==}
