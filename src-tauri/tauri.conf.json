@@ -65,7 +65,7 @@
       "csp": null
     },
     "updater": {
-      "active": true,
+      "active": false,
       "endpoints": [
         "https://gist.githubusercontent.com/LaMonkay/38a6f6e2c5378dfb3f5d56679db40a7d/raw/64ed7a5379977bd7843d0db4da083579a021372a/tauri-testing-updater.json"
       ],

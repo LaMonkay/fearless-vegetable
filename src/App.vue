@@ -15,8 +15,8 @@ import { open } from '@tauri-apps/api/dialog';
 
 async function openFile() {
   try {
-    const selectedPath = await open()
-    const contents = await readTextFile(selectedPath);
+    const selectedPath: string|string[]|null = await open()
+    const contents = await readTextFile(selectedPath as string);
     console.log(contents)
   } catch (err) {
     console.error(err)
@@ -33,7 +33,7 @@ async function dragDrop() {
 
 dragDrop()
 
-async function fileDropped(event) {
+async function fileDropped(event: any) {
   const contents = await readTextFile(event.payload[0]);
   console.log(contents)
 } 
