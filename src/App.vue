@@ -7,6 +7,36 @@ import { checkUpdate, installUpdate } from '@tauri-apps/api/updater'
 import { relaunch } from '@tauri-apps/api/process'
 import { writeTextFile, BaseDirectory, readTextFile } from '@tauri-apps/api/fs';
 import { merge } from 'lodash';
+import { listen } from '@tauri-apps/api/event'
+import { appConfigDir, appDataDir } from '@tauri-apps/api/path';
+
+
+import { open } from '@tauri-apps/api/dialog';
+
+async function openFile() {
+  try {
+    const selectedPath = await open()
+    const contents = await readTextFile(selectedPath);
+    console.log(contents)
+  } catch (err) {
+    console.error(err)
+  }
+}
+
+
+async function dragDrop() {
+  listen('tauri://file-drop', event => {
+    console.log(event)
+    fileDropped(event)
+  })
+}
+
+dragDrop()
+
+async function fileDropped(event) {
+  const contents = await readTextFile(event.payload[0]);
+  console.log(contents)
+} 
 
 async function update() {
   try {
@@ -88,6 +118,8 @@ updateMessage()
         >rust-analyzer</a
       >
     </p>
+
+    <button @click="openFile()">Browse Files</button>
 
     <Greet />
   </div>
